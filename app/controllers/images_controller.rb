@@ -10,15 +10,19 @@ class ImagesController < ApplicationController
   end
 
   def create
-    @image = Image.create(image_params)
+    @user = current_user
+    @image = @user.images.create(image_params)
+    redirect_to '/'
   end
 
   def new
     @image = Image.new
+    @user = current_user
   end
+
 end
 
 private
   def image_params
-    params.require(:image).permit(:description,:image)
+    params.require(:image).permit(:description, :image, :user_id, current_user)
 end

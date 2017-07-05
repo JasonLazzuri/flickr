@@ -1,4 +1,7 @@
 class TagsController < ApplicationController
+
+before_action :authenticate_user!, :only => [:index]
+
   def show
   end
 
@@ -10,4 +13,9 @@ class TagsController < ApplicationController
 
   def new
   end
+end
+
+private
+  def tag_params
+    params.require(:tag).permit(:name)
 end

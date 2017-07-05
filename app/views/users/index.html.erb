@@ -1,5 +1,10 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>Welcome, <%= @user.email %></h1>
 
+<h3>Here are all your photos!</h3>
 
-signup
+<% @images.each do |image| %>
+  <%= image_tag image.url %>
+
+<% end %>
+
+<%= link_to 'Add new image', new_user_image_path(@user) %>
