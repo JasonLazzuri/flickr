@@ -2,7 +2,14 @@
 <%= image_tag @image.image.url %>
 <br>
 <%= @image.description %>
+
+<% @tags.each do |tag| %>
+  <%= tag.name %>
+<% end %>
 <br>
 
 <%= link_to 'Edit', edit_user_image_path(@user, @image) %>
+<br>
 <%= link_to 'Delete', user_image_path(@user, @image), :method => :delete %>
+<br>
+<%= link_to 'Add Tags', new_user_image_tag_path(@user, @image) %>

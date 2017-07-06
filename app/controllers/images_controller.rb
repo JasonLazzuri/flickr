@@ -2,6 +2,7 @@ class ImagesController < ApplicationController
   def show
     @user = current_user
     @image = Image.find(params[:id])
+    @tags = @image.tags
   end
 
   def edit
@@ -11,7 +12,7 @@ class ImagesController < ApplicationController
 
   def index
     @user = current_user
-    @images = Image.all
+
   end
 
   def create
@@ -50,4 +51,4 @@ end
 
   def image_params
     params.require(:image).permit(:description, :image, :user_id, current_user)
-end
+  end
