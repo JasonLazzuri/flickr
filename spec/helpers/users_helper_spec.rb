@@ -1,15 +1,20 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the UsersHelper. For example:
-#
-# describe UsersHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
-RSpec.describe UsersHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+  describe User do
+    it 'creates a user' do
+      user = FactoryGirl.create(:user)
+    end
+
+    it 'signs the user out' do
+      user = FactoryGirl.create(:user)
+      'Sign out'
+    end
+
+    it 'adds an image to user' do
+      user = FactoryGirl.create(:user)
+      'Log in'
+      image = FactoryGirl.create(:image)
+      
+    end
+
+  end
