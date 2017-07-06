@@ -1,2 +1,8 @@
 <h1>Images#show</h1>
-<p>Find me in app/views/images/show.html.erb</p>
+<%= image_tag @image.image.url %>
+<br>
+<%= @image.description %>
+<br>
+
+<%= link_to 'Edit', edit_user_image_path(@user, @image) %>
+<%= link_to 'Delete', user_image_path(@user, @image), :method => :delete %>

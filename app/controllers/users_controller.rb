@@ -24,3 +24,7 @@ private
   def user_params
     params.require(:user).permit(:name)
 end
+
+def image_params
+  params.require(:image).permit(:description, :image, :user_id, current_user)
+end
